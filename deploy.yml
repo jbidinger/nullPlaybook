@@ -5,11 +5,11 @@
     - set_fact:
         distro: "{{ansible_os_family}}-{{ansible_distribution_major_version}}"
       tags: [ 'always' ]
-    - name: Create role group
-      group_by: "key=subnet_{{ansible_default_ipv4.network}}"
-      tags: [ 'always' ]
-    - name: Create subnet group
-      group_by: "key=role_{{mgage_env}}_{{mgage_role}}"
+#    - name: Create role group
+#      group_by: "key=subnet_{{ansible_default_ipv4.network}}"
+#      tags: [ 'always' ]
+#    - name: Create subnet group
+#      group_by: "key=role_{{mgage_env}}_{{mgage_role}}"
 
   tasks:
     - name: distro
