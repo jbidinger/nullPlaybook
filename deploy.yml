@@ -1,10 +1,10 @@
 ---
   
 - hosts: all
-  pre_tasks:
-    - set_fact:
-        distro: "{{ansible_os_family}}-{{ansible_distribution_major_version}}"
-      tags: [ 'always' ]
+#  pre_tasks:
+#    - set_fact:
+#        distro: "{{ansible_os_family}}-{{ansible_distribution_major_version}}"
+#      tags: [ 'always' ]
 #    - name: Create role group
 #      group_by: "key=subnet_{{ansible_default_ipv4.network}}"
 #      tags: [ 'always' ]
@@ -14,5 +14,5 @@
   tasks:
     - name: distro
       debug:
-        msg: "{{distro}}"
+        msg: "{{ansible_os_family}}-{{ansible_distribution_major_version}}"
 
